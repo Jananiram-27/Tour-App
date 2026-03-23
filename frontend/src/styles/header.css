@@ -1,0 +1,120 @@
+.header {
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.sticky__header {
+    background: #fff;
+    box-shadow: 3px 3px 8px -3px #ddd;
+}
+
+.menu {
+    margin-bottom: 0;
+}
+
+.nav__item a {
+    text-decoration: none;
+    color: #0b2727;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.active__link {
+    color: #faa935 !important;
+}
+/* Login & Register Button Styles */
+.nav__btns .secondary__btn {
+    background: transparent !important;
+    border: 1px solid #faa935 !important;
+}
+
+.nav__btns .secondary__btn a {
+    color: #0b2727 !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+}
+
+.nav__btns .primary__btn {
+    background: #faa935 !important;
+    border: none !important;
+}
+
+.nav__btns .primary__btn a {
+    color: #fff !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+}
+
+/* Hover effects */
+.nav__btns .secondary__btn:hover {
+    background: #faa935 !important;
+}
+
+.nav__btns .secondary__btn:hover a {
+    color: #fff !important;
+}
+
+/* User name style */
+.nav__right h5 {
+    color: #faa935;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+/* --- Desktop Menu (Default) --- */
+.mobile__menu {
+    display: none; /* Desktop-la hide pannidu */
+    color: #0b2727;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* --- Media Queries for Mobile & Tablet --- */
+@media only screen and (max-width: 768px) {
+    .navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Background dimming */
+        z-index: 9999;
+        display: none; /* Starting-la hide pannu */
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100%;
+        background: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 50px;
+    }
+
+    /* Inga dhaan namma menu-vai show panna porom */
+    .show__menu {
+        display: block !important;
+    }
+
+    .mobile__menu {
+        display: block; /* Phone-la mattum menu icon kaattu */
+    }
+
+    .nav__right {
+        gap: 1rem !important;
+    }
+
+    .nav__btns button {
+        padding: 4px 10px !important;
+        font-size: 0.8rem !important;
+    }
+}

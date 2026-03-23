@@ -1,0 +1,28 @@
+/* frontend/src/styles/thank-you.css */
+
+.thank__you {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.thank__you span i {
+  font-size: 3.5rem;
+  color: #faa935; /* TravelWorld Orange */
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.thank__you h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-family: "Subtitle", sans-serif;
+}
+
+.thank__you h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #0b2727;
+}
+
+/* Button Styles are handled by Bootstrap/Reactstrap */
