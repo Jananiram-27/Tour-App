@@ -16,7 +16,7 @@ const Home = () => {
         try {
           // --- AI LOGIC: Fetching by Category ---
           // Backend routes-la namma /getTourBySearch nu maathunadhala URL-um adhu kethamaari irukku
-          const res = await fetch(`http://localhost:8000/api/v1/tours/getTourBySearch?category=${userInterest}`);
+          const res = await fetch(`https://tour-app-backend-cc7h.onrender.com/api/v1/tours/getTourBySearch?category=${userInterest}`);
           const result = await res.json();
           
           if (res.ok) {

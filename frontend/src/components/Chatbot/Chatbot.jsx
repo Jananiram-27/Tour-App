@@ -21,7 +21,7 @@ const ChatBot = () => {
 
     try {
       // 2. Backend kitta pesurom
-      const res = await fetch("http://localhost:8000/api/v1/chat", {
+      const res = await fetch("https://tour-app-backend-cc7h.onrender.com/api/v1", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userMessage: userMsg.text }),

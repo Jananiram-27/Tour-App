@@ -22,7 +22,7 @@ const Login = () => {
     console.log("Login Button Clicked!", credentials); // Console check
 
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/auth/login`, {
+      const res = await fetch(`https://tour-app-backend-cc7h.onrender.com/api/v1/auth/login`, {
         method: 'post',
         headers: {
           'content-type': 'application/json',

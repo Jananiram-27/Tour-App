@@ -8,7 +8,8 @@ const Tours = () => {
   useEffect(() => {
     const fetchTours = async () => {
       try {
-        const res = await fetch('http://localhost:8000/api/v1/tours');
+        // Puthusu (Update this):
+const res = await fetch('https://tour-app-backend-cc7h.onrender.com/api/v1/tours');
         const result = await res.json();
         setTours(result.data);
       } catch (err) {

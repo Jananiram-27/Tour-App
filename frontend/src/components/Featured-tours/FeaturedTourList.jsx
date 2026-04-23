@@ -8,7 +8,7 @@ const FeaturedTourList = () => {
   useEffect(() => {
     const fetchTours = async () => {
       try {
-        const res = await fetch('http://localhost:8000/api/v1/tours'); // Backend Call
+        const res = await fetch('https://tour-app-backend-cc7h.onrender.com/api/v1'); // Backend Call
         const result = await res.json();
         // Verum "Featured" tours mattum edukkurom
         const featuredData = result.data.filter(tour => tour.featured === true);

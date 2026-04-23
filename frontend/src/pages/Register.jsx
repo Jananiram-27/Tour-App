@@ -24,7 +24,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/auth/register`, {
+      const res = await fetch(`https://tour-app-backend-cc7h.onrender.com/api/v1/auth/register`, {
         method: 'post',
         headers: {
           'content-type': 'application/json',
