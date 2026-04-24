@@ -9,32 +9,33 @@ const ChatBot = () => {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Message Anuppum Logic
   const handleSend = async () => {
     if (!input.trim()) return;
 
-    // 1. User Message Add panrom
     const userMsg = { text: input, sender: "user" };
     setMessages(prev => [...prev, userMsg]);
     setInput("");
     setLoading(true);
 
     try {
-      // 2. Backend kitta pesurom
-      const res = await fetch("https://tour-app-backend-cc7h.onrender.com/api/v1", {
+      // ✅ FIX: Added "/chat" to the endpoint
+      const res = await fetch("https://tour-app-backend-cc7h.onrender.com/api/v1/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input }),
+        body: JSON.stringify({ message: input }), 
       });
 
-      const data = await res.json();
+      // 404 check panna easy-ah irukkum
+      if (!res.ok) {
+        throw new Error(`Server responded with ${res.status}`);
+      }
 
-      // 3. AI Response Add panrom
+      const data = await res.json();
       const aiMsg = { text: data.message, sender: "ai" };
       setMessages(prev => [...prev, aiMsg]);
     } catch (error) {
       console.error("Chat Error:", error);
-      const errorMsg = { text: "Oops! Something went wrong.", sender: "ai" };
+      const errorMsg = { text: "Oops! I'm having trouble connecting to my brain. Check the URL path!", sender: "ai" };
       setMessages(prev => [...prev, errorMsg]);
     } finally {
       setLoading(false);
@@ -43,12 +44,10 @@ const ChatBot = () => {
 
   return (
     <>
-      {/* Floating Button */}
       <button className="chat-btn" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? <i className="ri-close-line"></i> : <i className="ri-robot-2-line"></i>}
       </button>
 
-      {/* Chat Window */}
       {isOpen && (
         <div className="chat-window">
           <div className="chat-header">
